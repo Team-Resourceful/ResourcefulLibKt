@@ -103,21 +103,5 @@ resourcefulGradle {
                     "mc_version"         : mc_version
             ]
         }
-        discordEmbed {
-            var fabricLink = System.getenv("FABRIC_RELEASE_URL")
-            var forgeLink = System.getenv("FORGE_RELEASE_URL")
-
-            injectedValues = [
-                    "version"      : libs.versions.mod.version.get(),
-                    "mc_version"   : mc_version,
-                    "neoforge_version": neoforge_version,
-                    "fabric_version": fabric_loader_version,
-                    "fabric_link": fabricLink,
-                    "forge_link": forgeLink
-            ]
-
-            def template = nightly.toBoolean() ? "nightly_embed.json.template" : "release_embed.json.template"
-            source = file("templates/$template")
-        }
     }
 }
