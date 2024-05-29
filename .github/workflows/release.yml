@@ -84,7 +84,7 @@ jobs:
           github-token: ${{ secrets.TEAM_RESOURCEFUL_BOT }}
 
           files: ./neoforge/build/libs/!(*-@(dev|sources|dev-shadow)).jar
-          name: "[NeoForge] Resourceful Lib ${{ steps.version.outputs.version }}"
+          name: "[NeoForge] Resourceful Lib Kt ${{ steps.version.outputs.version }}"
           version: ${{ steps.version.outputs.version }}
           changelog-file: changelog.md
           loaders: neoforge
@@ -100,7 +100,7 @@ jobs:
           github-token: ${{ secrets.TEAM_RESOURCEFUL_BOT }}
 
           files: ./fabric/build/libs/!(*-@(dev|sources|dev-shadow)).jar
-          name: "[Fabric] Resourceful Lib ${{ steps.version.outputs.version }}"
+          name: "[Fabric] Resourceful Lib Kt ${{ steps.version.outputs.version }}"
           version: ${{ steps.version.outputs.version }}
           changelog-file: changelog.md
           loaders: fabric
