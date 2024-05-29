@@ -14,4 +14,3 @@ val ItemStack.id: ResourceLocation
 fun properties(invoker: Item.Properties.() -> Unit): Item.Properties {
     return Item.Properties().apply { invoker(this) }
 }
-
