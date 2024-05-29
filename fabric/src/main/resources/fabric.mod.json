@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "resourcefullibkt",
+  "version": "${version}",
+  "name": "Resourceful Lib Kotlin",
+  "description": "Library Mod by Team Resourceful",
+  "contact": {
+    "issues": "https://github.com/Team-Resourceful/ResourcefulLibKt/issues/new/choose",
+    "sources": "https://github.com/Team-Resourceful/ResourcefulLibKt",
+    "homepage": "https://teamresourceful.com"
+  },
+  "authors": [
+    "ThatGravyBoat",
+    "Epic_Oreo"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.20.5"
+  }
+}
