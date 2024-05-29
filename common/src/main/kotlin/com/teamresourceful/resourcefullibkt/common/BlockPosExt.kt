@@ -7,10 +7,10 @@ operator fun BlockPos.component2(): Int = this.y
 operator fun BlockPos.component3(): Int = this.z
 
 operator fun BlockPos.times(multiplier: Int): BlockPos =
-    this.offset(this.x * multiplier, this.y * multiplier, this.z * multiplier)
+    BlockPos(this.x * multiplier, this.y * multiplier, this.z * multiplier)
 
 operator fun BlockPos.div(divisor: Int): BlockPos =
-    this.offset(this.x / divisor, this.y / divisor, this.z / divisor)
+    BlockPos(this.x / divisor, this.y / divisor, this.z / divisor)
 
 operator fun BlockPos.plus(other: BlockPos): BlockPos =
     this.offset(other.x, other.y, other.z)
