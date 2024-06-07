@@ -69,38 +69,6 @@ jobs:
           MAVEN_USER: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_PASS: ${{ secrets.MAVEN_PASSWORD }}
 
-      - name: Upload NeoForge Releases (Curse/Modrinth/Github)
-        id: forge_release
-        if: contains(steps.props.outputs.enabled_platforms, 'neoforge')
-        uses: Kir-Antipov/mc-publish@v3.3
-        with:
-          github-tag: "v${{ steps.version.outputs.version }}"
-          github-token: ${{ secrets.TEAM_RESOURCEFUL_BOT }}
-
-          files: ./neoforge/build/libs/!(*-@(dev|sources|dev-shadow)).jar
-          name: "[NeoForge] Resourceful Lib Kt ${{ steps.version.outputs.version }}"
-          version: ${{ steps.version.outputs.version }}
-          changelog-file: changelog.md
-          loaders: neoforge
-          game-versions: ${{ steps.props.outputs.mc_version }}
-          version-resolver: exact
-
-      - name: Upload Fabric Releases (Curse/Modrinth/Github)
-        id: fabric_release
-        if: contains(steps.props.outputs.enabled_platforms, 'fabric')
-        uses: Kir-Antipov/mc-publish@v3.3
-        with:
-          github-tag: "v${{ steps.version.outputs.version }}"
-          github-token: ${{ secrets.TEAM_RESOURCEFUL_BOT }}
-
-          files: ./fabric/build/libs/!(*-@(dev|sources|dev-shadow)).jar
-          name: "[Fabric] Resourceful Lib Kt ${{ steps.version.outputs.version }}"
-          version: ${{ steps.version.outputs.version }}
-          changelog-file: changelog.md
-          loaders: fabric
-          game-versions: ${{ steps.props.outputs.mc_version }}
-          version-resolver: exact
-
       - name: Update Readme
         run: |
           ./gradlew injectReadme
