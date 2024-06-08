@@ -3,9 +3,7 @@ package com.teamresourceful.resourcefullibkt.neoforge
 import com.mojang.serialization.Codec
 import net.neoforged.neoforge.attachment.AttachmentType
 
-typealias AttachmentSupplier <T> = () -> T
-
-fun <T> attachment(supplier: AttachmentSupplier<T>, builder: AttachmentType.Builder<T>.() -> Unit): AttachmentType<T> {
+fun <T> attachment(supplier: () -> T, builder: AttachmentType.Builder<T>.() -> Unit): AttachmentType<T> {
     return AttachmentType.builder(supplier).apply(builder).build()
 }
 
