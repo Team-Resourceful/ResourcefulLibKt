@@ -1,15 +1,11 @@
-# Resourceful Lib
+# Resourceful Lib Kotlin
 <hr>
 
-The library mod behind team resourceful mods and more.
-
-### Wiki
-
-You can find our wiki [here](https://lib.wiki.teamresourceful.com/).
+The extensions to Resourceful Lib for Kotlin.
 
 ### License and Availability
 
-The mod is licensed under MIT and is available on [Curseforge](https://www.curseforge.com/minecraft/mc-mods/resourceful-lib) and [Modrinth](https://modrinth.com/mod/resourceful-lib).
+The mod is licensed under MIT, this is an extension of Resourceful Lib and is available only on the maven.
 
 ### Contributions
 
@@ -22,17 +18,17 @@ If you would like to contribute to the mod feel free to submit a PR.
 Be sure to add our maven to your `build.gradle`:
 ```gradle
 repositories {
-    maven { url = "https://maven.resourcefulbees.com/repository/maven-public/" }
+    maven { url = "https://maven.teamresourceful.com/repository/maven-public/" }
     <--- other repositories here --->
 }
 ```
 You can then add our mod as a dependency:
 
-### Forge:
+### NeoForge:
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    implementation fg.deobf("com.teamresourceful.resourcefullib:resourcefullib-forge-1.20.5:2.5.5")
+    implementation fg.deobf("com.teamresourceful.resourcefullibkt:resourcefullibkt-neoforge-1.20.6:1.0.2")
 }
 ```
 
@@ -40,7 +36,7 @@ dependencies {
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    implementation "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.20.5:2.5.5"
+    implementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-fabric-1.20.6:1.0.2"
 }
 ```
 
@@ -50,7 +46,7 @@ dependencies {
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    modImplementation "com.teamresourceful.resourcefullib:resourcefullib-common-1.20.5:2.5.5"
+    modImplementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-common-1.20.6:1.0.2"
 }
 ```
 
@@ -58,15 +54,15 @@ dependencies {
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    modImplementation "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.20.5:2.5.5"
+    modImplementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-fabric-1.20.6:1.0.2"
 }
 ```
 
-#### Forge `build.gradle`
+#### NeoForge `build.gradle`
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    modImplementation "com.teamresourceful.resourcefullib:resourcefullib-forge-1.20.5:2.5.5"
+    modImplementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-neoforge-1.20.6:1.0.2"
 }
 ```
 
