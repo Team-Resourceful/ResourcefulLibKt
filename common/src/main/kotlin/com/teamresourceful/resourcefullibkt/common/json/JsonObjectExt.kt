@@ -30,7 +30,7 @@ fun JsonObject.getAsLong(key: String, default: Long?) = getAsOrElse(key, default
 fun JsonObject.getAsFloat(key: String, default: Float?) = getAsOrElse(key, default, JsonElement::isNumber) { asFloat }
 fun JsonObject.getAsDouble(key: String, default: Double?) = getAsOrElse(key, default, JsonElement::isNumber) { asDouble }
 
-private fun <T> JsonObject.getAsOrElse(key: String, default: T?, check: JsonElement.() -> Boolean, block: JsonElement.() -> T): T {
+private inline fun <T : Any> JsonObject.getAsOrElse(key: String, default: T?, check: JsonElement.() -> Boolean, block: JsonElement.() -> T): T {
     val value = get(key)
     if (value != null && value.check()) {
         return block(value)
