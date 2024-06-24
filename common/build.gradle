@@ -4,7 +4,7 @@ architectury {
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:$fabric_loader_version"
-    modImplementation("com.teamresourceful.resourcefullib:resourcefullib-common-1.20.5:2.5.5")
+    modImplementation("com.teamresourceful.resourcefullib:resourcefullib-common-${mc_version}:latest.release")
 }
 
 jar {
