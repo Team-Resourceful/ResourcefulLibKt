@@ -21,7 +21,7 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
 
-    implementation("thedarkcolour:kotlinforforge:5.3.0")
+    implementation("thedarkcolour:kotlinforforge-neoforge:5.3.0")
     modImplementation("com.teamresourceful.resourcefullib:resourcefullib-neoforge-${mc_version}:latest.release")
 }
 
