@@ -28,7 +28,7 @@ You can then add our mod as a dependency:
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    implementation fg.deobf("com.teamresourceful.resourcefullibkt:resourcefullibkt-neoforge-1.21:2.0.1")
+    implementation fg.deobf("com.teamresourceful.resourcefullibkt:resourcefullibkt-neoforge-1.21:2.0.2")
 }
 ```
 
@@ -36,7 +36,7 @@ dependencies {
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    implementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-fabric-1.21:2.0.1"
+    implementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-fabric-1.21:2.0.2"
 }
 ```
 
@@ -46,7 +46,7 @@ dependencies {
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    modImplementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-common-1.21:2.0.1"
+    modImplementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-common-1.21:2.0.2"
 }
 ```
 
@@ -54,7 +54,7 @@ dependencies {
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    modImplementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-fabric-1.21:2.0.1"
+    modImplementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-fabric-1.21:2.0.2"
 }
 ```
 
@@ -62,7 +62,7 @@ dependencies {
 ```gradle
 dependencies {
     <--- Other dependencies here --->
-    modImplementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-neoforge-1.21:2.0.1"
+    modImplementation "com.teamresourceful.resourcefullibkt:resourcefullibkt-neoforge-1.21:2.0.2"
 }
 ```
 
