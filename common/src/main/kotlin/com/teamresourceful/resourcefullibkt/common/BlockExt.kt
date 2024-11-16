@@ -20,6 +20,14 @@ val Block.holder: Holder.Reference<Block>
 operator fun TagKey<Block>.contains(block: Block): Boolean = block.holder.`is`(this)
 operator fun TagKey<Block>.contains(state: BlockState): Boolean = state.block in this
 
+fun blockProperties(invoker: BlockBehaviour.Properties.() -> Unit): BlockBehaviour.Properties {
+    return BlockBehaviour.Properties.of().apply { invoker(this) }
+}
+
+@Deprecated(
+    message = "Too ambiguous with item properties",
+    replaceWith = ReplaceWith("blockProperties(invoker)")
+)
 fun properties(invoker: BlockBehaviour.Properties.() -> Unit): BlockBehaviour.Properties {
     return BlockBehaviour.Properties.of().apply { invoker(this) }
 }

@@ -7,19 +7,10 @@ architectury {
     neoForge()
 }
 
-configurations {
-    common
-    shadowCommon // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
-    compileClasspath.extendsFrom common
-    runtimeClasspath.extendsFrom common
-    developmentNeoForge.extendsFrom common
-}
-
 dependencies {
     neoForge "net.neoforged:neoforge:$neoforge_version"
 
-    common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
+    compileOnly(project(":common"))
 
     implementation("thedarkcolour:kotlinforforge-neoforge:5.3.0")
     modImplementation("com.teamresourceful.resourcefullib:resourcefullib-neoforge-${mc_version}:latest.release")
@@ -33,18 +24,7 @@ processResources {
     }
 }
 
-shadowJar {
-    exclude "fabric.mod.json"
-    exclude "architectury.common.json"
-
-    configurations = [project.configurations.shadowCommon]
-    archiveAppendix.set "$project.name-$mc_version"
-    archiveClassifier.set "dev-shadow"
-}
-
 remapJar {
-    input.set shadowJar.archiveFile
-    dependsOn shadowJar
     archiveAppendix.set "$project.name-$mc_version"
     archiveClassifier.set null
 }
@@ -54,10 +34,15 @@ jar {
     archiveClassifier.set "dev"
 }
 
-sourcesJar {
-    def commonSources = project(":common").sourcesJar
-    dependsOn commonSources
-    from commonSources.archiveFile.map { zipTree(it) }
+sourceSets.main {
+    project(":common").sourceSets.main {
+        sourceSets.main.java {
+            srcDirs java.srcDirs
+        }
+        sourceSets.main.resources {
+            srcDirs resources.srcDirs
+        }
+    }
 }
 
 components.java {
