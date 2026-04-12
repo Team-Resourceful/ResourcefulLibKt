@@ -5,7 +5,7 @@ import com.teamresourceful.bytecodecs.base.ByteCodec
 import com.teamresourceful.resourcefullib.common.item.ResourcefulComponentType
 import net.minecraft.core.component.DataComponentType
 
-fun <T> component(builder: ResourcefulComponentType<T>.() -> Unit): DataComponentType<T> {
+fun <T : Any> component(builder: ResourcefulComponentType<T>.() -> Unit): DataComponentType<T> {
     return ResourcefulComponentType<T>().apply(builder).build()
 }
 

@@ -34,7 +34,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: 21
+          java-version: 25
 
       - name: Cache Gradle packages
         uses: actions/cache@v3
@@ -49,19 +49,11 @@ jobs:
       - name: Update Mod Version
         run: ./gradlew updateModVersion --patch=${{ inputs.patch }} --releaseType=${{ inputs.release-type }} --build=${{ inputs.build }}
 
-      - name: Get Mod Version
-        id: version
-        uses: christian-draeger/read-properties@1.1.1
-        with:
-          path: "./version.properties"
-          properties: "version"
-
-      - name: Get MC Version and Platforms
-        id: props
-        uses: christian-draeger/read-properties@1.1.1
-        with:
-          path: "./gradle.properties"
-          properties: "mc_version enabled_platforms"
+      - name: Get Properties
+        id: properties
+        run: |
+          echo "version=$(grep -m1 "^version=" version.properties | cut -c 9-)" >> $GITHUB_OUTPUT
+          echo "mcVersion=$(grep -m1 "^minecraft = " gradle/libs.versions.toml | cut -c 14- | rev | cut -c 2- | rev)" >> $GITHUB_OUTPUT
 
       - name: Publish package
         run: ./gradlew publish --info

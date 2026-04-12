@@ -2,16 +2,16 @@ package com.teamresourceful.resourcefullibkt.common
 
 import net.minecraft.core.Holder
 import net.minecraft.core.registries.BuiltInRegistries
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.tags.TagKey
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
 
-val Block.id: ResourceLocation
+val Block.id: Identifier
     get() = BuiltInRegistries.BLOCK.getKey(this)
 
-val BlockState.id: ResourceLocation
+val BlockState.id: Identifier
     get() = this.block.id
 
 val Block.holder: Holder.Reference<Block>

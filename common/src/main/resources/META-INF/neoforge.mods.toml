@@ -13,13 +13,6 @@ issueTrackerURL="https://github.com/Team-Resourceful/ResoucefulLibKt/issues/new/
 [[dependencies.resourcefullibkt]]
     modId = "neoforge"
     type = "required"
-    versionRange = "[21.3.0-beta,)"
-    ordering = "NONE"
-    side = "BOTH"
-
-[[dependencies.resourcefullibkt]]
-    modId = "minecraft"
-    type = "required"
-    versionRange = "[1.21.3,)"
+    versionRange = "[26.1.0.0-beta,)"
     ordering = "NONE"
     side = "BOTH"
